@@ -55,7 +55,7 @@ SELECT DISTINCT
         NULL            AS M_EXCLUSION_CD,
         NULL            AS C_PATH,
         NULL            AS C_SYMBOL
-FROM    ETL.ALLERGY_MAPPING
+FROM    ETL.ALLERGY_CONCEPT_MAPPING
 ORDER BY '\i2b2\Allergy\' || CLASS;
 
 
@@ -87,7 +87,7 @@ SELECT  3,
         NULL            AS M_EXCLUSION_CD,
         NULL            AS C_PATH,
         NULL            AS C_SYMBOL
-FROM    ETL.ALLERGY_MAPPING
+FROM    ETL.ALLERGY_CONCEPT_MAPPING
 WHERE   CLASS NOT IN ('DRUG', 'DRUG INGREDIENT')
 ORDER BY '\i2b2\Allergy\' || CLASS || '\' || NAME
 ;
@@ -120,7 +120,7 @@ SELECT  DISTINCT
         NULL            AS M_EXCLUSION_CD,
         NULL            AS C_PATH,
         NULL            AS C_SYMBOL
-FROM    ETL.ALLERGY_MAPPING
+FROM    ETL.ALLERGY_CONCEPT_MAPPING
 WHERE   CLASS IN ('DRUG', 'DRUG INGREDIENT')
 AND     SUBSTR(NAME,1,1) NOT IN (',','`','~','!','@','#','$','%','^','&','*','(',')','-','_','=','+','\','"',';',':',',','<','.','>')
 ORDER BY '\i2b2\Allergy\' || CLASS || '\' || SUBSTR(NAME,1,1)
@@ -156,7 +156,7 @@ SELECT  DISTINCT
         NULL            AS M_EXCLUSION_CD,
         NULL            AS C_PATH,
         NULL            AS C_SYMBOL
-FROM    ETL.ALLERGY_MAPPING
+FROM    ETL.ALLERGY_CONCEPT_MAPPING
 WHERE   CLASS IN ('DRUG', 'DRUG INGREDIENT')
 -- There are some names with just punctuation characters
 AND     SUBSTR(NAME,1,1) NOT IN (',','`','~','!','@','#','$','%','^','&','*','(',')','-','_','=','+','\','"',';',':',',','<','.','>')
